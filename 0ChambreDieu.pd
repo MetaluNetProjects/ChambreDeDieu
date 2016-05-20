@@ -1,4 +1,4 @@
-#N canvas 539 82 721 679 10;
+#N canvas 602 193 721 679 10;
 #X declare -stdpath moonlib;
 #X declare -stdpath hcs;
 #X declare -stdpath ggee;
@@ -84,20 +84,20 @@
 #X obj 23 460 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 23 388 fruit/receive bureau;
-#X obj 451 84 seq/main conduite;
-#X floatatom 507 113 5 0 0 3 mn - -, f 5;
-#X floatatom 563 111 5 0 0 3 sec - -, f 5;
-#X floatatom 621 112 5 0 0 3 frame - -, f 5;
-#X obj 427 61 bng 15 250 50 0 empty empty go 17 7 0 10 -4034 -1 -1
+#X obj 475 150 seq/main conduite;
+#X floatatom 531 179 5 0 0 3 mn - -, f 5;
+#X floatatom 587 177 5 0 0 3 sec - -, f 5;
+#X floatatom 645 178 5 0 0 3 frame - -, f 5;
+#X obj 451 127 bng 15 250 50 0 empty empty go 17 7 0 10 -4034 -1 -1
 ;
-#X obj 470 60 bng 15 250 50 0 empty empty stop 17 7 0 10 -258113 -1
+#X obj 494 126 bng 15 250 50 0 empty empty stop 17 7 0 10 -258113 -1
 -1;
-#X floatatom 434 111 5 0 0 3 line - -, f 5;
-#X obj 518 59 bng 15 250 50 0 empty empty next 17 7 0 10 -257985 -1
+#X floatatom 458 177 5 0 0 3 line - -, f 5;
+#X obj 542 125 bng 15 250 50 0 empty empty next 17 7 0 10 -257985 -1
 -1;
 #X obj 31 575 omxplayer;
 #X obj 26 552 r film-play;
-#N canvas 1 100 450 300 dimmers-assign 1;
+#N canvas 1 124 450 300 dimmers-assign 1;
 #X obj 68 28 r ramp-lampe_plante_1;
 #X obj 68 50 s dimmer1;
 #X obj 67 72 r ramp-lampe_plante_2;
@@ -117,7 +117,7 @@
 #X msg 227 482 c 40 c \$1 i \$2;
 #N canvas 122 192 698 309 bureau_dimmers 0;
 #X obj 54 132 vsl 15 128 0 1 0 0 bdimmer1 bdimmer1 1 0 -9 0 10 -257985
--1 -1 6350 1;
+-1 -1 0 1;
 #X obj 70 132 vsl 15 128 0 1 0 0 bdimmer2 bdimmer2 2 0 -9 0 10 -257985
 -1 -1 0 1;
 #X obj 238 114 * 65535;
@@ -174,7 +174,7 @@
 #X connect 7 0 3 0;
 #X connect 8 0 5 0;
 #X restore 590 357 pd phone;
-#N canvas 104 201 450 300 sonnette 0;
+#N canvas 102 207 450 300 sonnette 0;
 #X obj 96 28 r seq-conduite-line;
 #X obj 96 66 route sonnette;
 #X obj 96 96 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -261,9 +261,9 @@
 #X connect 10 0 9 1;
 #X connect 11 0 10 0;
 #X restore 19 603 pd audio;
-#X obj 575 56 bng 15 250 50 0 empty empty reload 17 7 0 10 -128992
+#X obj 599 122 bng 15 250 50 0 empty empty reload 17 7 0 10 -128992
 -1 -1;
-#N canvas 1 110 662 287 ramps&moments 1;
+#N canvas 1 134 662 287 ramps&moments 1;
 #X obj 50 63 seq/ramp conduite lumiere_bureau;
 #X obj 291 92 seq/alias conduite lumieres_plantes lampe_plante_1;
 #X obj 50 93 seq/ramp conduite lampe_plante_1;
@@ -276,6 +276,11 @@
 #X obj 50 191 seq/moment conduite telephone_lumiere;
 #X obj 50 213 seq/moment conduite danseuse;
 #X restore 27 518 pd ramps&moments;
+#X obj 542 32 r seq-conduite-line;
+#X obj 542 59 route recommence;
+#X msg 407 70 stop;
+#X obj 451 30 r AUTOSTART;
+#X obj 451 97 del 2000;
 #X connect 2 0 3 0;
 #X connect 3 0 9 0;
 #X connect 4 0 5 0;
@@ -311,3 +316,8 @@
 #X connect 46 0 48 0;
 #X connect 47 0 46 1;
 #X connect 50 0 17 3;
+#X connect 52 0 53 0;
+#X connect 53 0 21 0;
+#X connect 54 0 56 0;
+#X connect 55 0 56 0;
+#X connect 56 0 21 0;
