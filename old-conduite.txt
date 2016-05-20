@@ -1,0 +1,171 @@
+00 00 00 ­ 00 26 10 : Tout est OFF
+
+00 26 11 ­ 01 21 17 : Lumière bureau passe de 0% à 50%
+
+01 21 17 ­ 01 51 24 : Lumière bureau (50%)
+
+01 25 00 ­ 01 51 24 : Lumières plantes de 0% à 50% (graduellement)
+
+01 51 03 ­ 01 55 07 : Lumière bureau + lumières plantes de 50% à 100% (graduellement)
+
+01 55 07 ­ 01 59 06 : Lumière bureau + lumières plantes de 100% à 50% (graduellement)
+
+01 59 06 ­ 02 15 13 : Lumière bureau + lumières plantes restent à 50%
+
+02 15 13 ­ 03 44 12 : Lumière bureau + lumières plantes OFF
+
+02 38 06 : TV (mais il est prévu que l’écran soit toujours allumé dc cela ne te concerne
+
+pas j’imagine?)
+
+03 38 16 ­ 04 13 02 : Vibreur + lumière du téléphone
+
+04 11 04 ­ 04 20 07 : Enceinte dans le plateau
+
+04 24 20 ­ 04 25 11 : Lampe plante gauche/devant 100%
+
+04 25 12 ­ 04 26 05 : Lampe plante droite/derrière 100%
+
+04 26 06 ­ 04 27 14 : Lampe plante gauche/derrière 100%
+
+04 27 15 ­ 04 28 07 : Lampe plante droite/devant 100%
+
+04 28 08 ­ 04 28 59 : Lampe plante gauche/devant 100%
+
+04 29 00 ­ 04 29 18 : Lampe plante droite/devant 100%
+
+04 29 20 ­ 05 16 19 : Lampes bureau + plantes ON 100%
+
+04 29 20 : Sonnette
+
+04 58 09 : Sonnette
+
+05 05 11 : Sonnette
+
+05 11 20 : Sonnette
+
+05 28 23 ­ 05 32 20 : Lampe plante gauche/devant 30%
+
+05 29 23 ­ 05 32 20 : Lampe plante droite/devant 30%
+
+05 30 18 ­ 05 32 20 : Lampe plante gauche/arrière 30%
+
+05 31 10 ­ 05 32 20 : Lampe plante droite/arrière 30%
+
+05 32 02 ­ 05 32 20 : Lampe bureau 30%
+
+05 32 20 ­ 05 32 06 : Lampes bureau + plantes passent de 30% à 60%
+
+05 32 08 ­ 05 39 18 : Lampe plante droite/arrière 30%
+
+05 37 05 ­ 05 39 18 : Lampe plante gauche/arrière 30%
+
+05 37 16 ­ 05 39 18 : Lampe plante gauche/devant 30%
+
+05 38 12 ­ 05 39 18 : Lampe plante droite/devant 30%
+
+05 39 01 ­ 05 39 18 : Lampe bureau 30%
+
+05 39 18 ­ 05 43 09 : Lampes bureau + plantes passent de 30% à 60%
+
+05 43 11 ­ 05 47 05 : Lampe plante gauche/arrière 30%
+
+05 44 11 ­ 05 47 05 : Lampe plante droite/devant 30%
+
+05 45 04 ­ 05 47 05 : Lampe plante droite/arrière 30%
+
+05 45 19 ­ 05 47 05 : Lampe plante gauche/devant 30%
+
+05 46 13 ­ 05 47 05 : Lampe bureau 30%
+
+05 47 05 ­ 06 04 11 : Lampes bureau + plantes passent de 30% à 100%
+
+06 04 09 ­ 06 04 11 : Lampes bureau + plantes OFF
+
+06 04 11 ­ 06 04 14 : Lampes bureau + plantes ON 100%
+
+06 04 17 ­ 06 04 18 : Lampes bureau + plantes OFF
+
+06 04 21 ­ 06 04 18 : Lampes bureau + plantes ON 100%
+
+06 05 21 ­ 06 08 16 : Lampes bureau + plantes passent de 100% à 10%
+
+06 08 16 ­ 06 36 18 : Lampes bureau + plantes restent à 10%
+
+06 36 18 ­ 08 08 14 : Lumière bureau + plantes ON 100%
+
+07 26 19 : Sonnette
+
+07 33 23 : Sonnette
+
+07 42 05 : Sonnette
+
+08 08 14 ­ 08 09 18 : Lumière bureau seule 100%
+
+08 09 18 ­ 08 12 00 : Lumière bureau + plantes ON 100%
+
+08 12 00 ­ 08 13 03 : Lumière bureau seule 100%
+
+08 13 03 ­ 08 18 22 : Lumière bureau + plantes ON 100%
+
+08 33 07 ­ 09 25 20 : Led maquette 100%
+
+09 25 20 ­ 09 41 05 : Toutes les lumières clignotent en arc de cercle, l’intensité augmente
+
+partant de 50% à 100%.
+
+L’imprimante imprime. La figurine danse. Le téléphone vibre. La sonnette sonne. (je te
+
+ferai un détail de tout cela ­ l’idée étant que ce soit le bordel)
+
+09 41 04 ­ 10 13 17 : Lumières vertes plantes passent de 0% à 100%
+
+10 13 17 ­ 10 58 15 : Lumières vertes plantes restent à 100%
+
+10 58 15 ­ 12 22 23 : Guirlande sapin ON 100%
+
+11 37 03 ­ 13 21 06 : Sapin crache de la neige
+
+12 23 01 ­ 12 23 05 : Guirlande ON 100%
+
+12 23 04 ­ 12 23 09 : Guirlande ON 100%
+
+12 26 10 ­ 12 26 14 : Guirlande ON 100%
+
+12 29 22 ­ 12 30 01 : Guirlande ON 100%
+
+12 29 22 ­ 12 30 01 : Guirlande ON 100%
+
+12 29 22 ­ 12 30 01 : Guirlande ON 100%
+
+12 29 22 ­ 12 30 01 : Guirlande ON 100%
+
+12 34 21 ­ 12 34 23 : Guirlande ON 100%
+
+12 35 11 ­ 12 35 15 : Guirlande ON 100%
+
+12 35 18 ­ 12 35 22 : Guirlande ON 100%
+
+12 45 00 ­ 13 21 06 : Guirlande passe de 40% à 0%
+
+13 21 06 ­ 13 31 06 : Tout OFF
+
+13 31 07 ­ 16 00 00 : Lumière bureau + plantes ON 100%
+
+14 05 00 ­ 15 40 : Figurine danse
+
+15 40 : Sonnette
+
+15 50 : Sonnette
+
+15 55 : Sonnette
+
+15 56 : Sonnette
+
+15 57 : Sonnette
+
+15 58 : Sonnette
+
+15 59 : Sonnette
+
+16 00 : L’instal reprend au début.
