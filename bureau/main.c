@@ -10,7 +10,9 @@
 #include <dimmer.h>
 #include <dcmotor.h>
 
-t_delay mainDelay;
+t_delay mainDelay, ringDelay;
+char isRinging = 0;
+unsigned int ringTime = 10000;
 DCMOTOR_DECLARE(C);
 
 void setup(void) {	
@@ -56,6 +58,13 @@ void loop() {
 		//analogSend();		// send analog channels that changed
 		DCMOTOR_COMPUTE(C,SYM);
 	}
+	
+	if(isRinging && delayFinished(ringDelay)) // when ringDelay triggers :
+	{
+		isRinging = 0;
+		digitalClear(MD2);
+	}
+
 }
 
 // Receiving
@@ -90,11 +99,17 @@ void bitoutReceive()
 			break;
 		case 1 : 
 			if(v==0) digitalClear(MD2);
-			else digitalSet(MD2);
+			else {
+				digitalSet(MD2);
+				isRinging = 1;
+				delayStart(ringDelay, ringTime);				
+			}
 			break;
 		case 2 : 
 			if(v==0) digitalClear(DANSEUSE);
-			else digitalSet(DANSEUSE);
+			else {
+				digitalSet(DANSEUSE);
+			}
 			break;
 	}	
 }
@@ -106,6 +121,7 @@ void fraiseReceive() // receive raw
 	
 	switch(c) {
 		case 10 : bitoutReceive() ; break;
+		case 11 : ringTime = fraiseGetInt() ; break;
 		case 40 : dimmerReceive() ; break;
 	    case 120 : DCMOTOR_INPUT(C) ; break;
 	    //case 121 : DCMOTOR_INPUT(D) ; break;
