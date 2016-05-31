@@ -1,4 +1,4 @@
-#N canvas 602 193 721 679 10;
+#N canvas 604 214 721 679 10;
 #X declare -stdpath moonlib;
 #X declare -stdpath hcs;
 #X declare -stdpath ggee;
@@ -7,7 +7,7 @@
 #X declare -stdpath Fraise;
 #X obj 21 38 pied/pied 0 41424;
 #X obj 21 17 declare -stdpath Fraise;
-#N canvas 124 187 698 309 dimmers 0;
+#N canvas 122 191 698 309 dimmers 0;
 #X obj 54 132 vsl 15 128 0 1 0 0 dimmer1 dimmer1 1 0 -9 0 10 -257985
 -1 -1 0 1;
 #X obj 70 132 vsl 15 128 0 1 0 0 dimmer2 dimmer2 2 0 -9 0 10 -257985
@@ -19,29 +19,29 @@
 #X obj 199 90 r dimmer1;
 #X obj 199 112 * 65535;
 #X msg 199 135 0 \$1;
-#X obj 260 112 * 65535;
-#X obj 324 112 * 65535;
-#X obj 385 112 * 65535;
-#X obj 260 90 r dimmer2;
-#X msg 260 135 1 \$1;
-#X msg 324 135 2 \$1;
-#X obj 324 90 r dimmer3;
-#X msg 385 135 3 \$1;
-#X obj 385 90 r dimmer4;
+#X obj 267 112 * 65535;
+#X obj 335 112 * 65535;
+#X obj 403 112 * 65535;
+#X obj 267 90 r dimmer2;
+#X msg 267 135 1 \$1;
+#X msg 335 135 2 \$1;
+#X obj 335 90 r dimmer3;
+#X msg 402 135 3 \$1;
+#X obj 403 90 r dimmer4;
 #X obj 276 205 outlet;
 #X obj 118 132 vsl 15 128 0 1 0 0 dimmer5 dimmer5 5 0 -9 0 10 -257985
 -1 -1 0 1;
 #X obj 134 132 vsl 15 128 0 1 0 0 dimmer6 dimmer6 6 0 -9 0 10 -257985
 -1 -1 0 1;
-#X obj 450 112 * 65535;
-#X obj 511 112 * 65535;
-#X obj 450 90 r dimmer5;
-#X obj 511 90 r dimmer6;
-#X msg 450 135 4 \$1;
-#X msg 511 135 5 \$1;
-#X obj 575 113 * 65535;
-#X obj 575 91 r dimmer7;
-#X msg 575 136 6 \$1;
+#X obj 468 112 * 65535;
+#X obj 529 112 * 65535;
+#X obj 468 90 r dimmer5;
+#X obj 529 90 r dimmer6;
+#X msg 468 135 4 \$1;
+#X msg 529 135 5 \$1;
+#X obj 593 113 * 65535;
+#X obj 593 91 r dimmer7;
+#X msg 593 136 6 \$1;
 #X obj 150 132 vsl 15 128 0 1 0 0 dimmer7 dimmer7 7 0 -9 0 10 -257985
 -1 -1 0 1;
 #X connect 4 0 5 0;
@@ -97,7 +97,7 @@
 -1;
 #X obj 31 575 omxplayer;
 #X obj 26 552 r film-play;
-#N canvas 1 124 450 300 dimmers-assign 1;
+#N canvas 1 132 450 300 dimmers-assign 0;
 #X obj 68 28 r ramp-lampe_plante_1;
 #X obj 68 50 s dimmer1;
 #X obj 67 72 r ramp-lampe_plante_2;
@@ -139,18 +139,16 @@
 #X msg 366 477 c 120 c 4 i \$1;
 #X obj 366 318 vsl 15 128 0 1 0 0 led_maquette led_maquette led_maquette
 0 -9 0 10 -257985 -1 -1 0 1;
-#X obj 366 454 * 1023;
 #X msg 483 381 c 10 c 0 c \$1;
-#X obj 483 359 tgl 15 0 led_phone led_phone led_phone 17 7 0 10 -257985
+#X obj 483 359 tgl 15 0 led_phone-s led_phone led_phone 17 7 0 10 -257985
 -1 -1 0 1;
-#X obj 485 422 tgl 15 0 sonnette sonnette sonnette 17 7 0 10 -257985
+#X obj 485 422 tgl 15 0 sonnette-s sonnette sonnette 17 7 0 10 -257985
 -1 -1 0 1;
 #X msg 485 444 c 10 c 1 c \$1;
 #X obj 452 553 fruit/send2 bureau;
-#X obj 488 483 tgl 15 0 danseuse danseuse danseuse 17 7 0 10 -257985
+#X obj 488 483 tgl 15 0 danseuse-s danseuse danseuse 17 7 0 10 -257985
 -1 -1 0 1;
-#X msg 488 505 c 10 c 1 c \$1;
-#N canvas 25 466 450 300 phone 0;
+#N canvas 23 466 450 300 phone 0;
 #X obj 127 25 r moment-telephone_lumiere;
 #X obj 127 48 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -173,30 +171,42 @@
 #X connect 6 0 9 0;
 #X connect 7 0 3 0;
 #X connect 8 0 5 0;
+#X coords 0 -1 1 1 85 40 1 100 25;
 #X restore 590 357 pd phone;
-#N canvas 102 207 450 300 sonnette 0;
-#X obj 96 28 r seq-conduite-line;
-#X obj 96 66 route sonnette;
-#X obj 96 96 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#N canvas 96 219 450 300 sonnette 1;
+#X obj 125 27 r seq-conduite-line;
+#X obj 125 65 route sonnette;
+#X obj 125 95 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 96 118 t b b;
-#X msg 123 143 1;
-#X msg 96 189 0;
-#X obj 104 218 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 125 117 t b b;
+#X msg 152 142 1;
+#X msg 125 188 0;
+#X obj 133 217 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 104 241 s sonnette;
-#X obj 96 167 del 20;
+#X obj 133 240 s sonnette;
+#X msg 210 154 50;
+#X msg 250 157 20;
+#X msg 220 123 100;
+#X msg 215 184 10;
+#X msg 261 107 35;
+#X obj 125 166 del 30;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
-#X connect 3 0 8 0;
+#X connect 3 0 13 0;
 #X connect 3 1 4 0;
 #X connect 4 0 6 0;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
-#X connect 8 0 5 0;
+#X connect 8 0 13 1;
+#X connect 9 0 13 1;
+#X connect 10 0 13 1;
+#X connect 11 0 13 1;
+#X connect 12 0 13 1;
+#X connect 13 0 5 0;
+#X coords 0 -1 1 1 85 40 1 100 75;
 #X restore 591 433 pd sonnette;
-#N canvas 104 201 450 300 danseuse 0;
+#N canvas 102 205 450 300 danseuse 0;
 #X obj 127 48 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 127 77 t f f;
@@ -219,6 +229,7 @@
 #X connect 6 0 0 0;
 #X connect 8 0 2 0;
 #X connect 9 0 4 0;
+#X coords 0 -1 1 1 85 40 1 100 25;
 #X restore 593 498 pd danseuse;
 #X obj 135 536 r seq-conduite-line;
 #X obj 135 560 route ordi;
@@ -263,7 +274,7 @@
 #X restore 19 603 pd audio;
 #X obj 599 122 bng 15 250 50 0 empty empty reload 17 7 0 10 -128992
 -1 -1;
-#N canvas 1 134 662 287 ramps&moments 1;
+#N canvas 1 142 662 287 ramps&moments 0;
 #X obj 50 63 seq/ramp conduite lumiere_bureau;
 #X obj 291 92 seq/alias conduite lumieres_plantes lampe_plante_1;
 #X obj 50 93 seq/ramp conduite lampe_plante_1;
@@ -281,6 +292,8 @@
 #X msg 407 70 stop;
 #X obj 451 30 r AUTOSTART;
 #X obj 451 97 del 2000;
+#X obj 366 453 * 1023;
+#X msg 488 505 c 10 c 2 c \$1;
 #X connect 2 0 3 0;
 #X connect 3 0 9 0;
 #X connect 4 0 5 0;
@@ -299,25 +312,25 @@
 #X connect 22 0 17 1;
 #X connect 24 0 17 2;
 #X connect 26 0 25 0;
-#X connect 26 0 49 0;
+#X connect 26 0 47 0;
 #X connect 28 0 30 0;
 #X connect 29 0 28 0;
 #X connect 31 0 30 0;
-#X connect 32 0 33 0;
-#X connect 33 0 31 0;
-#X connect 34 0 38 0;
-#X connect 35 0 34 0;
+#X connect 32 0 55 0;
+#X connect 33 0 37 0;
+#X connect 34 0 33 0;
+#X connect 35 0 36 0;
 #X connect 36 0 37 0;
-#X connect 37 0 38 0;
-#X connect 39 0 40 0;
-#X connect 40 0 38 0;
-#X connect 44 0 45 0;
-#X connect 45 0 46 0;
-#X connect 46 0 48 0;
-#X connect 47 0 46 1;
-#X connect 50 0 17 3;
-#X connect 52 0 53 0;
-#X connect 53 0 21 0;
-#X connect 54 0 56 0;
-#X connect 55 0 56 0;
-#X connect 56 0 21 0;
+#X connect 38 0 56 0;
+#X connect 42 0 43 0;
+#X connect 43 0 44 0;
+#X connect 44 0 46 0;
+#X connect 45 0 44 1;
+#X connect 48 0 17 3;
+#X connect 50 0 51 0;
+#X connect 51 0 21 0;
+#X connect 52 0 54 0;
+#X connect 53 0 54 0;
+#X connect 54 0 21 0;
+#X connect 55 0 31 0;
+#X connect 56 0 37 0;
