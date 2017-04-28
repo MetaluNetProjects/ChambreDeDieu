@@ -1,4 +1,4 @@
-#N canvas 56 82 911 684 10;
+#N canvas 42 80 911 684 10;
 #X obj 104 134 text define \$1;
 #X obj 104 76 symbol \$1;
 #X obj 104 48 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -58,7 +58,7 @@
 #X obj 292 484 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 295 549 list trim;
-#X obj 313 125 inlet go;
+#X obj 313 104 inlet go;
 #X obj 444 131 inlet stop;
 #X obj 612 552 outlet mn;
 #X obj 707 555 outlet sec;
@@ -75,6 +75,15 @@
 #X obj 384 377 r seq-\$1-lasttime;
 #X obj 366 400 f;
 #X obj 660 126 inlet reload;
+#X obj 310 128 t b b;
+#X obj 360 153 s \$1-RESET;
+#X obj 658 148 s \$1-RELOAD;
+#X obj 136 46 r \$1-RELOAD;
+#X obj 424 295 b;
+#X obj 450 168 s \$1-STOP;
+#X obj 457 301 r seq-\$1-lasttime;
+#X obj 439 324 f;
+#X obj 424 352 s \$1-playAt;
 #X connect 1 0 4 0;
 #X connect 2 0 1 0;
 #X connect 3 0 2 0;
@@ -132,12 +141,15 @@
 #X connect 54 0 35 0;
 #X connect 55 0 26 0;
 #X connect 56 0 30 0;
-#X connect 57 0 32 0;
+#X connect 57 0 74 0;
 #X connect 58 0 54 0;
+#X connect 58 0 79 0;
 #X connect 62 0 65 0;
 #X connect 63 0 64 0;
 #X connect 63 0 66 0;
 #X connect 65 0 19 0;
+#X connect 65 0 40 0;
+#X connect 65 0 78 0;
 #X connect 67 0 30 0;
 #X connect 69 0 38 1;
 #X connect 70 0 21 0;
@@ -145,4 +157,10 @@
 #X connect 70 2 72 0;
 #X connect 71 0 72 1;
 #X connect 72 0 69 0;
-#X connect 73 0 2 0;
+#X connect 73 0 76 0;
+#X connect 74 0 32 0;
+#X connect 74 1 75 0;
+#X connect 77 0 2 0;
+#X connect 78 0 81 0;
+#X connect 80 0 81 1;
+#X connect 81 0 82 0;
